@@ -1,0 +1,5 @@
+secret_key.txt
+Pipfile.lock
+.idea
+api/migrations
+db.sqlite3
