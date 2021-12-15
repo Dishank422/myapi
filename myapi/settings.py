@@ -144,3 +144,5 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ),
 }
+
+CSRF_TRUSTED_ORIGINS = ['https://obscure-lake-76357.herokuapp.com']
