@@ -6,22 +6,10 @@ from .serializers import *
 
 
 @api_view(['GET'])
-def sport(request, sport_name):
+def index(request, name):
 
     try:
-        objs = Article.objects.filter(sport=sport_name)
-    except Article.DoesNotExist:
-        return HttpResponse(status=404)
-
-    serializer = ArticleSerializer(objs, many=True)
-    return Response(serializer.data)
-
-
-@api_view(['GET'])
-def sex(request, s):
-
-    try:
-        objs = Article.objects.filter(sex=s)
+        objs = Article.objects.filter(team0=name) | Article.objects.filter(team1=name)
     except Article.DoesNotExist:
         return HttpResponse(status=404)
 
